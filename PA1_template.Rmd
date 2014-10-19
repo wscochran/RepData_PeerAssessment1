@@ -87,6 +87,8 @@ There were `r missingData` missing values which were imputed as the mean for the
 
 The process of imputing mean values for the missing step data coerced the step counts to floats, causing the value of the median steps to be rounded up 1 step.
 
+The Imputing of values also resulted in the dataset used for the histogram above to include 8 additional days of data as compared to the initial histogram.
+
 The Imputed NA mean steps taken per day is: `r meanStepsPerDayImputed`
 
 The Imputed NA median steps taken per day is: `r medianStepsPerDayImputed`

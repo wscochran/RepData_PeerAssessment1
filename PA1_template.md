@@ -96,6 +96,8 @@ There were 2304 missing values which were imputed as the mean for their given in
 
 The process of imputing mean values for the missing step data coerced the step counts to floats, causing the value of the median steps to be rounded up 1 step.
 
+The Imputing of values also resulted in the Imputed dataset used for the histogram above to include 8 additional days of data as compared to the initial histogram. This results in an exaggerated 
+
 The Imputed NA mean steps taken per day is: 1.0766 &times; 10<sup>4</sup>
 
 The Imputed NA median steps taken per day is: 1.0766 &times; 10<sup>4</sup>
