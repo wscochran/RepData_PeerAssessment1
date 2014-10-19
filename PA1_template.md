@@ -96,7 +96,7 @@ There were 2304 missing values which were imputed as the mean for their given in
 
 The process of imputing mean values for the missing step data coerced the step counts to floats, causing the value of the median steps to be rounded up 1 step.
 
-The Imputing of values also resulted in the Imputed dataset used for the histogram above to include 8 additional days of data as compared to the initial histogram. This results in an exaggerated 
+The Imputing of values also resulted in the dataset used for the histogram above to include 8 additional days of data as compared to the initial histogram.
 
 The Imputed NA mean steps taken per day is: 1.0766 &times; 10<sup>4</sup>
 
@@ -109,43 +109,9 @@ The Imputed NA median steps taken per day is: 1.0766 &times; 10<sup>4</sup>
 ActivityImputed[, daytype:= ifelse(weekdays(date)=="Saturday" 
                                    | weekdays(date)=="Sunday",
                                    "weekend", "weekday")]
-```
 
-```
-##          steps       date interval daytype
-##     1: 1.71698 2012-10-01        0 weekday
-##     2: 0.33962 2012-10-01        5 weekday
-##     3: 0.13208 2012-10-01       10 weekday
-##     4: 0.15094 2012-10-01       15 weekday
-##     5: 0.07547 2012-10-01       20 weekday
-##    ---                                    
-## 17564: 4.69811 2012-11-30     2335 weekday
-## 17565: 3.30189 2012-11-30     2340 weekday
-## 17566: 0.64151 2012-11-30     2345 weekday
-## 17567: 0.22642 2012-11-30     2350 weekday
-## 17568: 1.07547 2012-11-30     2355 weekday
-```
-
-```r
 ActivityImputed[, daytype := as.factor(daytype)]
-```
 
-```
-##          steps       date interval daytype
-##     1: 1.71698 2012-10-01        0 weekday
-##     2: 0.33962 2012-10-01        5 weekday
-##     3: 0.13208 2012-10-01       10 weekday
-##     4: 0.15094 2012-10-01       15 weekday
-##     5: 0.07547 2012-10-01       20 weekday
-##    ---                                    
-## 17564: 4.69811 2012-11-30     2335 weekday
-## 17565: 3.30189 2012-11-30     2340 weekday
-## 17566: 0.64151 2012-11-30     2345 weekday
-## 17567: 0.22642 2012-11-30     2350 weekday
-## 17568: 1.07547 2012-11-30     2355 weekday
-```
-
-```r
 stepsPerIntervalImputed <- 
         aggregate(steps ~ interval + daytype, ActivityImputed, mean)
 

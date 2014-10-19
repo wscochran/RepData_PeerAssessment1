@@ -95,7 +95,7 @@ The Imputed NA median steps taken per day is: `r medianStepsPerDayImputed`
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
-```{r ActivityPatterns}
+```{r ActivityPatterns, results="hide"}
 
 ActivityImputed[, daytype:= ifelse(weekdays(date)=="Saturday" 
                                    | weekdays(date)=="Sunday",
